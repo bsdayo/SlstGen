@@ -16,7 +16,7 @@
     </ItemGroup>
     
     <ItemGroup>
-        <None Update="../../LICENSE" CopyToPublishDirectory="PreserveNewest" />
+        <Content Include="../../LICENSE" CopyToPublishDirectory="Always" />
     </ItemGroup>
 
 </Project>
