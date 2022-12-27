@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlstGen", "SlstGen\SlstGen.csproj", "{82499FCC-1086-4D71-A2BF-33535D483FA9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlstGen", "src\SlstGen\SlstGen.csproj", "{82499FCC-1086-4D71-A2BF-33535D483FA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
