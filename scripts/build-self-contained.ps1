@@ -8,5 +8,4 @@ dotnet publish `
     -p:PublishSingleFile=true `
     -p:IncludeNativeLibrariesForSelfExtract=true `
     -p:EnableCompressionInSingleFile=true `
-    -p:PublishReadyToRun=true `
     $csprojPath
