@@ -1,0 +1,49 @@
+﻿<ui:UiPage x:Class="NekoSpace.SlstGen.Views.Pages.AboutPage"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+           mc:Ignorable="d"
+           d:DesignHeight="300" d:DesignWidth="300"
+           Title="AboutPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" VerticalAlignment="Center">
+            <ui:Hyperlink
+                HorizontalAlignment="Center"
+                NavigateUri="https://wiki.arcaea.cn/%E6%AD%8C%E6%9B%B2%E4%BF%A1%E6%81%AF(songlist)%E6%A0%BC%E5%BC%8F">
+                songlist 格式说明
+            </ui:Hyperlink>
+            <ui:Hyperlink
+                Margin="0,8"
+                HorizontalAlignment="Center"
+                NavigateUri="https://github.com/NekoSpace/SlstGen/">
+                源代码
+            </ui:Hyperlink>
+            <ui:Hyperlink
+                HorizontalAlignment="Center"
+                NavigateUri="https://github.com/NekoSpace/">
+                NekoSpace
+            </ui:Hyperlink>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <TextBlock
+                Margin="0,0,0,8"
+                Foreground="Gray"
+                HorizontalAlignment="Center">
+                Copyright © 2022 NekoSpace
+            </TextBlock>
+            <TextBlock
+                Foreground="Gray"
+                HorizontalAlignment="Center">
+                v1.0.0 - Powered by .NET 7 / WPF
+            </TextBlock>
+        </StackPanel>
+    </Grid>
+</ui:UiPage>
