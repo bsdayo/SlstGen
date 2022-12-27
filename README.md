@@ -4,6 +4,8 @@
 
 Arcaea 曲目信息 (songlist) 生成器
 
+![预览](./assets/screenshot.jpg)
+
 </div>
 
 SlstGen 是一个为 Arcaea 谱师制作的小工具，用于便捷生成供游戏本体读取的 `songlist` 信息，基于 .NET 7 + WPF 开发。
