@@ -41,11 +41,11 @@ public partial class BasicPage
 
     private void OnBeyondToggleSwitchChecked(object sender, RoutedEventArgs e)
     {
-        ((BasicPageViewModel)DataContext).AddBeyondDifficulty();
+        ((BasicPageViewModel)DataContext).Shared.AddBeyondDifficulty();
     }
 
     private void OnBeyondToggleSwitchUnchecked(object sender, RoutedEventArgs e)
     {
-        ((BasicPageViewModel)DataContext).RemoveBeyondDifficulty();
+        ((BasicPageViewModel)DataContext).Shared.RemoveBeyondDifficulty();
     }
 }

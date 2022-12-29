@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using NekoSpace.SlstGen.Services;
+using NekoSpace.SlstGen.ViewModels;
 
 namespace NekoSpace.SlstGen;
 
@@ -15,10 +16,11 @@ public partial class App
         Ioc.Default.ConfigureServices(GetServiceProvider());
     }
 
-    private IServiceProvider GetServiceProvider()
+    private static IServiceProvider GetServiceProvider()
     {
         return new ServiceCollection()
             .AddSingleton<SlstService>()
+            .AddSingleton<SharedViewModel>()
             .BuildServiceProvider();
     }
 }

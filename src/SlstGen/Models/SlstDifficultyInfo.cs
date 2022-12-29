@@ -19,9 +19,6 @@ public class SlstDifficultyInfo
     [JsonPropertyName("ratingPlus")]
     public bool? RatingPlus { get; set; } = null;
 
-    [JsonPropertyName("plusFingers")]
-    public bool? PlusFingers { get; set; } = null;
-
     [JsonPropertyName("jacket_night")]
     public string? JacketNight { get; set; } = null;
 

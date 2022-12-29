@@ -1,0 +1,128 @@
+﻿<ui:UiPage x:Class="NekoSpace.SlstGen.Views.Pages.MiscPage"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+           xmlns:vm="clr-namespace:NekoSpace.SlstGen.ViewModels"
+           mc:Ignorable="d"
+           d:DesignHeight="1000" d:DesignWidth="300"
+           Title="BasicPage">
+
+    <ui:UiPage.DataContext>
+        <vm:MiscPageViewModel />
+    </ui:UiPage.DataContext>
+
+    <ScrollViewer Padding="12">
+        <StackPanel>
+            <TextBlock Text="反转背景 ID" />
+            <ui:TextBox
+                Margin="0,8"
+                PlaceholderText="不填将无法触发 光 &amp; 对立 (Reunion) 技能"
+                Text="{Binding BgInverse, UpdateSourceTrigger=PropertyChanged}" />
+
+            <TextBlock Text="白天背景 ID" />
+            <ui:TextBox
+                Margin="0,8"
+                PlaceholderText="白天显示的背景，参考群愿技能"
+                Text="{Binding BgDay, UpdateSourceTrigger=PropertyChanged}" />
+
+            <TextBlock Text="夜间背景 ID" />
+            <ui:TextBox
+                Margin="0,8"
+                PlaceholderText="夜间显示的背景，参考群愿技能"
+                Text="{Binding BgNight, UpdateSourceTrigger=PropertyChanged}" />
+
+            <TextBlock Text="曲目版权方" />
+            <ui:TextBox
+                Margin="0,8"
+                PlaceholderText="留空将不显示"
+                Text="{Binding SourceCopyright, UpdateSourceTrigger=PropertyChanged}" />
+
+            <Grid Margin="0,8">
+                <TextBlock Text="通过世界模式解锁" VerticalAlignment="Center" />
+                <ui:ToggleSwitch
+                    HorizontalAlignment="Right"
+                    IsChecked="{Binding WorldUnlock}" />
+            </Grid>
+            <Grid Margin="0,8">
+                <TextBlock Text="通过服务器下载" VerticalAlignment="Center" />
+                <ui:ToggleSwitch
+                    HorizontalAlignment="Right"
+                    IsChecked="{Binding RemoteDl}" />
+            </Grid>
+            <Grid Margin="0,8">
+                <TextBlock Text="Beyond 难度由本地解锁" VerticalAlignment="Center" />
+                <ui:ToggleSwitch
+                    HorizontalAlignment="Right"
+                    IsChecked="{Binding BydLocalUnlock}" />
+            </Grid>
+            <Grid Margin="0,8">
+                <TextBlock Text="解锁前在选曲界面隐藏" VerticalAlignment="Center" />
+                <ui:ToggleSwitch
+                    HorizontalAlignment="Right"
+                    IsChecked="{Binding SonglistHidden}" />
+            </Grid>
+            <Grid Margin="0,8">
+                <TextBlock Text="不允许在直播模式下游玩" VerticalAlignment="Center" />
+                <ui:ToggleSwitch
+                    HorizontalAlignment="Right"
+                    IsChecked="{Binding NoStream}" />
+            </Grid>
+
+            <ItemsControl ItemsSource="{Binding Shared.Difficulties}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Separator Margin="0,4" />
+
+                            <Grid Margin="0,8">
+                                <TextBlock VerticalAlignment="Center" Text="{Binding SpecialCoverLabel}" />
+                                <ui:ToggleSwitch
+                                    HorizontalAlignment="Right"
+                                    IsChecked="{Binding JacketOverride}" />
+                            </Grid>
+
+                            <Grid Margin="0,8">
+                                <TextBlock VerticalAlignment="Center" Text="{Binding SpecialAudioLabel}" />
+                                <ui:ToggleSwitch
+                                    HorizontalAlignment="Right"
+                                    IsChecked="{Binding AudioOverride}" />
+                            </Grid>
+
+                            <Grid Margin="0,8">
+                                <TextBlock
+                                    Text="{Binding RatingClassText, StringFormat='{}{0} 难度解锁前在选曲界面隐藏'}"
+                                    VerticalAlignment="Center" />
+                                <ui:ToggleSwitch
+                                    HorizontalAlignment="Right"
+                                    IsChecked="{Binding HiddenUntilUnlocked}" />
+                            </Grid>
+
+                            <Grid Margin="0,8,0,16">
+                                <TextBlock
+                                    Text="{Binding RatingClassText, StringFormat='{}{0} 难度通过世界模式解锁'}"
+                                    VerticalAlignment="Center" />
+                                <ui:ToggleSwitch
+                                    HorizontalAlignment="Right"
+                                    IsChecked="{Binding WorldUnlock}" />
+                            </Grid>
+
+                            <TextBlock Text="{Binding RatingClassText, StringFormat='{}{0} 难度背景 ID'}" />
+                            <ui:TextBox
+                                Margin="0,8"
+                                Text="{Binding Bg, UpdateSourceTrigger=PropertyChanged}"
+                                PlaceholderText="留空与默认保持一致" />
+
+                            <TextBlock Text="{Binding RatingClassText, StringFormat='{}{0} 难度夜间曲绘文件名'}" />
+                            <ui:TextBox
+                                Margin="0,8"
+                                Text="{Binding JacketNight, UpdateSourceTrigger=PropertyChanged}"
+                                PlaceholderText="夜间显示的曲绘，参考群愿技能" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </ScrollViewer>
+</ui:UiPage>

@@ -10,13 +10,36 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0-preview2" />
-      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
-      <PackageReference Include="WPF-UI" Version="2.0.3" />
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0-preview2"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0"/>
+        <PackageReference Include="WPF-UI" Version="2.0.3"/>
     </ItemGroup>
-    
+
     <ItemGroup>
-        <Content Include="../../LICENSE" CopyToPublishDirectory="Always" />
+        <Content Include="../../LICENSE" CopyToPublishDirectory="Always"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Page Update="Views\Pages\BasicPage.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <XamlRuntime>Wpf</XamlRuntime>
+            <SubType>Designer</SubType>
+        </Page>
+        <Page Update="Views\Pages\LocalizationPage.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <XamlRuntime>Wpf</XamlRuntime>
+            <SubType>Designer</SubType>
+        </Page>
+        <Page Update="Views\Pages\MiscPage.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <XamlRuntime>Wpf</XamlRuntime>
+            <SubType>Designer</SubType>
+        </Page>
+        <Page Update="Views\Pages\AboutPage.xaml">
+            <Generator>MSBuild:Compile</Generator>
+            <XamlRuntime>Wpf</XamlRuntime>
+            <SubType>Designer</SubType>
+        </Page>
     </ItemGroup>
 
 </Project>

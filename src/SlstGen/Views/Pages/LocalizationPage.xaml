@@ -1,0 +1,118 @@
+﻿<ui:UiPage x:Class="NekoSpace.SlstGen.Views.Pages.LocalizationPage"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+           xmlns:vm="clr-namespace:NekoSpace.SlstGen.ViewModels"
+           mc:Ignorable="d"
+           d:DesignHeight="1000" d:DesignWidth="300"
+           Title="LocalizationPage">
+
+    <ui:UiPage.DataContext>
+        <vm:LocalizationPageViewModel />
+    </ui:UiPage.DataContext>
+
+    <ScrollViewer Padding="12">
+        <StackPanel>
+            <TextBlock Text="英文曲目名称" />
+            <ui:TextBox
+                Margin="0,8"
+                Text="{Binding Shared.NameEn, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+            <TextBlock Text="简体中文曲目名称" />
+            <ui:TextBox
+                Margin="0,8"
+                Text="{Binding TitleLocalized.ZhHans, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                PlaceholderText="留空与英文同步" />
+
+            <TextBlock Text="繁体中文曲目名称" />
+            <ui:TextBox
+                Margin="0,8"
+                Text="{Binding TitleLocalized.ZhHant, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                PlaceholderText="留空与英文同步" />
+
+            <TextBlock Text="日文曲目名称" />
+            <ui:TextBox
+                Margin="0,8"
+                Text="{Binding TitleLocalized.Ja, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                PlaceholderText="留空与英文同步" />
+
+            <TextBlock Text="韩文曲目名称" />
+            <ui:TextBox
+                Margin="0,8,0,0"
+                Text="{Binding TitleLocalized.Ko, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                PlaceholderText="留空与英文同步" />
+
+            <Separator Margin="0,12" />
+
+            <TextBlock Text="英文曲目来源" />
+            <ui:TextBox
+                Margin="0,8"
+                Text="{Binding SourceLocalized.En, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+            <TextBlock Text="简体中文曲目来源" />
+            <ui:TextBox
+                Margin="0,8"
+                Text="{Binding SourceLocalized.ZhHans, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                PlaceholderText="留空与英文同步" />
+
+            <TextBlock Text="繁体中文曲目来源" />
+            <ui:TextBox
+                Margin="0,8"
+                Text="{Binding SourceLocalized.ZhHant, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                PlaceholderText="留空与英文同步" />
+
+            <TextBlock Text="日文曲目来源" />
+            <ui:TextBox
+                Margin="0,8"
+                Text="{Binding SourceLocalized.Ja, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                PlaceholderText="留空与英文同步" />
+
+            <TextBlock Text="韩文曲目来源" />
+            <ui:TextBox
+                Margin="0,8,0,0"
+                Text="{Binding SourceLocalized.Ko, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                PlaceholderText="留空与英文同步" />
+
+            <Separator Margin="0,12" />
+
+            <TextBlock Margin="0,0,0,4" TextWrapping="Wrap">
+                注：以下条目需要谱面文件夹内包含对应文件才能开启。
+            </TextBlock>
+
+            <Grid Margin="0,8">
+                <TextBlock>
+                    简体中文环境下使用特殊曲绘<LineBreak />base_zh-Hans.jpg
+                </TextBlock>
+                <ui:ToggleSwitch
+                    HorizontalAlignment="Right"
+                    IsChecked="{Binding JacketLocalizedZhHans}" />
+            </Grid>
+            <Grid Margin="0,8">
+                <TextBlock>
+                    繁体中文环境下使用特殊曲绘<LineBreak />base_zh-Hant.jpg
+                </TextBlock>
+                <ui:ToggleSwitch
+                    HorizontalAlignment="Right"
+                    IsChecked="{Binding JacketLocalizedZhHant}" />
+            </Grid>
+            <Grid Margin="0,8">
+                <TextBlock>
+                    日文环境下使用特殊曲绘<LineBreak />base_ja.jpg
+                </TextBlock>
+                <ui:ToggleSwitch
+                    HorizontalAlignment="Right"
+                    IsChecked="{Binding JacketLocalizedJa}" />
+            </Grid>
+            <Grid Margin="0,8">
+                <TextBlock>
+                    韩文环境下使用特殊曲绘<LineBreak />base_ko.jpg
+                </TextBlock>
+                <ui:ToggleSwitch
+                    HorizontalAlignment="Right"
+                    IsChecked="{Binding JacketLocalizedKo}" />
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+</ui:UiPage>

@@ -7,199 +7,201 @@
            xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
            xmlns:vm="clr-namespace:NekoSpace.SlstGen.ViewModels"
            mc:Ignorable="d"
-           d:DesignHeight="1000" d:DesignWidth="300"
+           d:DesignHeight="1000" d:DesignWidth="400"
            Title="BasicPage">
 
     <ui:UiPage.DataContext>
         <vm:BasicPageViewModel />
     </ui:UiPage.DataContext>
 
-    <StackPanel>
-        <TextBlock Text="曲目名称" />
-        <ui:TextBox
-            Margin="0,8"
-            Text="{Binding NameEn, UpdateSourceTrigger=PropertyChanged}" />
-
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="曲目 ID" />
+    <ScrollViewer Padding="12">
+        <StackPanel>
+            <TextBlock Text="曲目名称" />
             <ui:TextBox
-                Grid.Row="1" Grid.Column="0"
-                Margin="0,8,4,8"
-                PlaceholderText="仅包含字母"
-                Text="{Binding Id, UpdateSourceTrigger=PropertyChanged}" />
+                Margin="0,8"
+                Text="{Binding Shared.NameEn, UpdateSourceTrigger=PropertyChanged}" />
 
-            <TextBlock Grid.Row="0" Grid.Column="1" Margin="4,0,0,0" Text="LinkPlay 标识 ID" />
-            <ui:NumberBox
-                Grid.Row="1" Grid.Column="1"
-                Margin="4,8,0,8"
-                Step="1"
-                IntegersOnly="True"
-                Value="{Binding Idx, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-        </Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-        <TextBlock Text="曲师" />
-        <ui:TextBox
-            Margin="0,8"
-            Text="{Binding Artist, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="曲目 ID" />
+                <ui:TextBox
+                    Grid.Row="1" Grid.Column="0"
+                    Margin="0,8,4,8"
+                    PlaceholderText="仅包含字母"
+                    Text="{Binding Id, UpdateSourceTrigger=PropertyChanged}" />
 
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="1" Margin="4,0,0,0" Text="LinkPlay 标识 ID" />
+                <ui:NumberBox
+                    Grid.Row="1" Grid.Column="1"
+                    Margin="4,8,0,8"
+                    Step="1"
+                    IntegersOnly="True"
+                    Value="{Binding Idx, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            </Grid>
 
-            <TextBlock Grid.Row="0" Grid.Column="0" Text="显示 BPM" />
+            <TextBlock Text="曲师" />
             <ui:TextBox
-                Grid.Row="1" Grid.Column="0"
-                Margin="0,8,4,8"
-                PlaceholderText="将显示在游戏中"
-                Text="{Binding Bpm, UpdateSourceTrigger=PropertyChanged}" />
+                Margin="0,8"
+                Text="{Binding Artist, UpdateSourceTrigger=PropertyChanged}" />
 
-            <TextBlock Grid.Row="0" Grid.Column="1" Margin="4,0,0,0" Text="基准 BPM" />
-            <ui:NumberBox
-                Grid.Row="1" Grid.Column="1"
-                Margin="4,8,0,8"
-                IntegersOnly="True"
-                Value="{Binding BpmBase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="曲包 ID" />
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="显示 BPM" />
+                <ui:TextBox
+                    Grid.Row="1" Grid.Column="0"
+                    Margin="0,8,4,8"
+                    PlaceholderText="将显示在游戏中"
+                    Text="{Binding Bpm, UpdateSourceTrigger=PropertyChanged}" />
+
+                <TextBlock Grid.Row="0" Grid.Column="1" Margin="4,0,0,0" Text="基准 BPM" />
+                <ui:NumberBox
+                    Grid.Row="1" Grid.Column="1"
+                    Margin="4,8,0,8"
+                    IntegersOnly="True"
+                    Value="{Binding BpmBase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="曲包 ID" />
+                <ui:TextBox
+                    Grid.Row="3" Grid.Column="0"
+                    Margin="0,8,4,8"
+                    PlaceholderText="仅包含字母"
+                    Text="{Binding Set, UpdateSourceTrigger=PropertyChanged}" />
+
+                <TextBlock Grid.Row="2" Grid.Column="1" Margin="4,0,0,0" Text="购买方式" />
+                <ui:TextBox
+                    Grid.Row="3" Grid.Column="1"
+                    Margin="4,8,0,8"
+                    PlaceholderText="无需购买则留空"
+                    Text="{Binding Purchase, UpdateSourceTrigger=PropertyChanged}" />
+
+                <TextBlock Grid.Row="4" Grid.Column="0" Margin="4,0,0,0" Text="音频预览起始时间（毫秒）" />
+                <ui:NumberBox
+                    Grid.Row="5" Grid.Column="0"
+                    Margin="0,8,4,8"
+                    Step="1"
+                    IntegersOnly="True"
+                    Value="{Binding AudioPreview, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                <TextBlock Grid.Row="4" Grid.Column="1" Margin="4,0,0,0" Text="音频预览终止时间（毫秒）" />
+                <ui:NumberBox
+                    Grid.Row="5" Grid.Column="1"
+                    Margin="4,8,0,8"
+                    Step="1"
+                    IntegersOnly="True"
+                    Value="{Binding AudioPreviewEnd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            </Grid>
+
+            <TextBlock Text="属性" />
+            <ComboBox Margin="0,8" SelectedIndex="{Binding Side}">
+                <ComboBoxItem IsSelected="True">光芒侧</ComboBoxItem>
+                <ComboBoxItem>纷争侧</ComboBoxItem>
+                <ComboBoxItem>消色侧</ComboBoxItem>
+            </ComboBox>
+
+            <TextBlock Text="背景 ID" />
             <ui:TextBox
-                Grid.Row="3" Grid.Column="0"
-                Margin="0,8,4,8"
-                PlaceholderText="仅包含字母"
-                Text="{Binding Set, UpdateSourceTrigger=PropertyChanged}" />
+                Margin="0,8"
+                PlaceholderText="留空自动判断使用 base_light 或 base_conflict"
+                Text="{Binding Bg, UpdateSourceTrigger=PropertyChanged}" />
 
-            <TextBlock Grid.Row="2" Grid.Column="1" Margin="4,0,0,0" Text="购买方式" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="发布日期" />
+                <DatePicker
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="0,8,4,8"
+                    SelectedDate="{Binding Date}" />
+
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="4,0,0,0"
+                    Text="发布时间" />
+                <ui:TextBox
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="4,8,0,8"
+                    PreviewTextInput="OnTimeTextInput"
+                    PlaceholderText="时:分:秒"
+                    Text="{Binding Time, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            </Grid>
+
+            <TextBlock Text="发布版本" />
             <ui:TextBox
-                Grid.Row="3" Grid.Column="1"
-                Margin="4,8,0,8"
-                PlaceholderText="无需购买则留空"
-                Text="{Binding Purchase, UpdateSourceTrigger=PropertyChanged}" />
+                Margin="0,8,0,0"
+                PreviewTextInput="OnVersionTextInput"
+                PlaceholderText="Arcaea 版本号 (eg. 4.0)"
+                Text="{Binding Version, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-            <TextBlock Grid.Row="4" Grid.Column="0" Margin="4,0,0,0" Text="音频预览起始时间（毫秒）" />
-            <ui:NumberBox
-                Grid.Row="5" Grid.Column="0"
-                Margin="0,8,4,8"
-                Step="1"
-                IntegersOnly="True"
-                Value="{Binding AudioPreview, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+            <Separator Margin="0,12" />
 
-            <TextBlock Grid.Row="4" Grid.Column="1" Margin="4,0,0,0" Text="音频预览终止时间（毫秒）" />
-            <ui:NumberBox
-                Grid.Row="5" Grid.Column="1"
-                Margin="4,8,0,8"
-                Step="1"
-                IntegersOnly="True"
-                Value="{Binding AudioPreviewEnd, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-        </Grid>
+            <Grid>
+                <TextBlock Text="启用 Beyond 难度" VerticalAlignment="Center" />
+                <ui:ToggleSwitch
+                    HorizontalAlignment="Right"
+                    Checked="OnBeyondToggleSwitchChecked"
+                    Unchecked="OnBeyondToggleSwitchUnchecked" />
+            </Grid>
 
-        <TextBlock Text="属性" />
-        <ComboBox Margin="0,8" SelectedIndex="{Binding Side}">
-            <ComboBoxItem IsSelected="True">光芒侧</ComboBoxItem>
-            <ComboBoxItem>纷争侧</ComboBoxItem>
-            <ComboBoxItem>消色侧</ComboBoxItem>
-        </ComboBox>
+            <ItemsControl ItemsSource="{Binding Shared.Difficulties}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <Separator Margin="0,12" />
 
-        <TextBlock Text="背景 ID" />
-        <ui:TextBox
-            Margin="0,8"
-            PlaceholderText="留空使用默认背景"
-            Text="{Binding Bg, UpdateSourceTrigger=PropertyChanged}" />
+                            <TextBlock Text="{Binding RatingClassText, StringFormat='{}{0} 难度谱师'}" />
+                            <ui:TextBox
+                                Margin="0,8"
+                                Text="{Binding ChartDesigner, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="Auto" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="4*" />
-                <ColumnDefinition Width="3*" />
-            </Grid.ColumnDefinitions>
+                            <TextBlock Text="{Binding RatingClassText, StringFormat='{}{0} 难度曲绘画师'}" />
+                            <ui:TextBox
+                                Margin="0,8"
+                                Text="{Binding JacketDesigner, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
-            <TextBlock
-                Grid.Row="0"
-                Grid.Column="0"
-                Text="发布日期" />
-            <DatePicker
-                Grid.Row="1"
-                Grid.Column="0"
-                Margin="0,8,4,8"
-                SelectedDate="{Binding Date}" />
-
-            <TextBlock
-                Grid.Row="0"
-                Grid.Column="1"
-                Margin="4,0,0,0"
-                Text="发布时间" />
-            <ui:TextBox
-                Grid.Row="1"
-                Grid.Column="1"
-                Margin="4,8,0,8"
-                PreviewTextInput="OnTimeTextInput"
-                PlaceholderText="时:分:秒"
-                Text="{Binding Time, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-        </Grid>
-
-        <TextBlock Text="发布版本" />
-        <ui:TextBox
-            Margin="0,8,0,0"
-            PreviewTextInput="OnVersionTextInput"
-            PlaceholderText="Arcaea 版本号 (eg. 4.0)"
-            Text="{Binding Version, UpdateSourceTrigger=PropertyChanged}" />
-
-        <Separator Margin="0,12" />
-
-        <DockPanel>
-            <TextBlock Text="启用 Beyond 难度" VerticalAlignment="Center" />
-            <ui:ToggleSwitch
-                HorizontalAlignment="Right"
-                Checked="OnBeyondToggleSwitchChecked"
-                Unchecked="OnBeyondToggleSwitchUnchecked" />
-        </DockPanel>
-
-        <ItemsControl ItemsSource="{Binding Difficulties}">
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <Separator Margin="0,12" />
-
-                        <TextBlock Text="{Binding RatingClassText, StringFormat='{}{0} 难度谱师'}" />
-                        <ui:TextBox
-                            Margin="0,8"
-                            Text="{Binding ChartDesigner, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-
-                        <TextBlock Text="{Binding RatingClassText, StringFormat='{}{0} 难度曲绘画师'}" />
-                        <ui:TextBox
-                            Margin="0,8"
-                            Text="{Binding JacketDesigner, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-
-                        <TextBlock Text="{Binding RatingClassText, StringFormat='{}{0} 难度定级'}" />
-                        <ui:TextBox
-                            Margin="0,8,0,0"
-                            PreviewTextInput="OnDifficultyTextInput"
-                            PlaceholderText="eg. 9, 10+"
-                            input:InputMethod.IsInputMethodEnabled="False"
-                            Text="{Binding Difficulty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                    </StackPanel>
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
-    </StackPanel>
+                            <TextBlock Text="{Binding RatingClassText, StringFormat='{}{0} 难度定级'}" />
+                            <ui:TextBox
+                                Margin="0,8,0,0"
+                                PreviewTextInput="OnDifficultyTextInput"
+                                PlaceholderText="eg. 9, 10+"
+                                input:InputMethod.IsInputMethodEnabled="False"
+                                Text="{Binding Difficulty, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+    </ScrollViewer>
 </ui:UiPage>

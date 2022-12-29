@@ -43,6 +43,14 @@
                     Content="基本"
                     Icon="Rocket24"
                     PageType="{x:Type pages:BasicPage}" />
+                <ui:NavigationItem
+                    Content="本地化"
+                    Icon="Translate24"
+                    PageType="{x:Type pages:LocalizationPage}" />
+                <ui:NavigationItem
+                    Content="杂项"
+                    Icon="Options24"
+                    PageType="{x:Type pages:MiscPage}" />
             </ui:NavigationCompact.Items>
             <ui:NavigationCompact.Footer>
                 <ui:NavigationItem
@@ -63,9 +71,7 @@
             Grid.Column="1"
             CornerRadius="8,8,0,0"
             Background="{DynamicResource ControlFillColorDefaultBrush}">
-            <ScrollViewer Padding="12">
-                <Frame x:Name="RootFrame" />
-            </ScrollViewer>
+            <Frame x:Name="RootFrame" />
         </Border>
 
         <Border

@@ -18,9 +18,6 @@ public class SlstItem
     [JsonPropertyName("artist")]
     public string Artist { get; set; } = string.Empty;
 
-    [JsonPropertyName("artist_localized")]
-    public SlstLocalizationInfo? ArtistLocalized { get; set; } = null;
-
     [JsonPropertyName("bpm")]
     public string Bpm { get; set; } = string.Empty;
 
@@ -46,10 +43,10 @@ public class SlstItem
     public string Bg { get; set; } = string.Empty;
 
     [JsonPropertyName("bg_inverse")]
-    public string? BgInverse { get; set; } = null;
+    public string? BgInverse { get; set; }
 
     [JsonPropertyName("bg_daynight")]
-    public SlstBgDayNightInfo? BgDayNight { get; set; } = null;
+    public SlstBgDayNightInfo? BgDayNight { get; set; }
 
     [JsonPropertyName("date")]
     public long Date { get; set; }
@@ -58,31 +55,28 @@ public class SlstItem
     public string Version { get; set; } = string.Empty;
 
     [JsonPropertyName("world_unlock")]
-    public bool? WorldUnlock { get; set; } = null;
+    public bool? WorldUnlock { get; set; }
 
     [JsonPropertyName("remote_dl")]
-    public bool? RemoteDl { get; set; } = null;
+    public bool? RemoteDl { get; set; }
 
     [JsonPropertyName("byd_local_unlock")]
-    public bool? BydLocalUnlock { get; set; } = null;
+    public bool? BydLocalUnlock { get; set; }
 
     [JsonPropertyName("songlist_hidden")]
-    public bool? SonglistHidden { get; set; } = null;
-
-    [JsonPropertyName("no_pp")]
-    public bool? NoPp { get; set; } = null;
+    public bool? SonglistHidden { get; set; }
 
     [JsonPropertyName("source_localized")]
     public SlstLocalizationInfo? SourceLocalized { get; set; } = null;
 
     [JsonPropertyName("source_copyright")]
-    public string? SourceCopyright { get; set; } = null;
+    public string? SourceCopyright { get; set; }
 
     [JsonPropertyName("no_stream")]
-    public bool? NoStream { get; set; } = null;
+    public bool? NoStream { get; set; }
 
     [JsonPropertyName("jacket_localized")]
-    public SlstLocalizationInfo? JacketLocalized { get; set; } = null;
+    public SlstJacketLocalizationInfo? JacketLocalized { get; set; }
 
     [JsonPropertyName("difficulties")]
     public List<SlstDifficultyInfo> Difficulties { get; set; } = Enumerable.Range(0, 3)
