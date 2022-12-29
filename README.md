@@ -4,7 +4,7 @@
 
 Arcaea 曲目信息 (songlist) 生成器
 
-![预览](./assets/screenshot.jpg)
+![预览](./assets/screenshot-v1.1.0.jpg)
 
 </div>
 
@@ -14,7 +14,6 @@ SlstGen 是一个为 Arcaea 谱师制作的小工具，用于便捷生成供游�
 
 - Fluent Design
 - 自包含 .NET 桌面运行时（可选）
-- MVVM
 
 ## 使用
 
@@ -30,6 +29,8 @@ SlstGen 也可以自行编译使用，需要安装 .NET 7 SDK。使用 PowerShel
 
 - `scripts/build-self-contained.ps1` - 编译自包含版本
 - `scripts/build-framework-dependent.ps1` - 编译框架依赖版本
+
+编译产物将存放在 `build` 目录下。
 
 ## 致谢
 - [CommunityToolkit.Mvvm](https://github.com/CommunityToolkit/dotnet)
